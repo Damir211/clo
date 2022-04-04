@@ -28,11 +28,31 @@
         <meta property="twitter:description" content="" />
         <link rel="image_src" href="" />
 
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+        <link rel="manifest" href="./favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
         <script>
             (function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)
         </script>
 
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     </head>
 
     <body class="page">
@@ -433,11 +453,182 @@
                     <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1.4165 0.916668L5.99984 5.5L10.5832 0.916668" stroke="#333333" stroke-linecap="round" />
                     </svg>
+                    <div class="header__lang-more">
+                        <a href="#">Ru</a>
+                    </div>
                 </div>
             </div>
         </header>
         <div class="itemcontainer">
+            <div class="wrapper">
+                <nav class="breadcrubs">
+                    <ol>
+                        <li class="breadcrubs__item">
+                            <a href="#" class="breadcrubs__link">Home</a>
+                        </li>
+                        <li class="breadcrubs__item">
+                            <a href="#" class="breadcrubs__link">NEW ARRIVALS</a>
+                        </li>
+                        <li class="breadcrubs__item">
+                            <a href="#" class="breadcrubs__link">THE NEVE TOP BROWN</a>
+                        </li>
+                    </ol>
+                </nav>
+                <div class="itemcontainer__main">
+                    <div class="itemcontainer__slider">
+                        <div thumbsSlider="" class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item7.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item8.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item6.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item5.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item4.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item7.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item8.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item6.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item5.jpg" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./static/img/content/item4.jpg" />
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="itemcontainer__info">
+                        <div class="itemcontainer__name">
+                            THE NEVE TOP BROWN
+                        </div>
+                        <div class="itemcontainer__price">
+                            $99.95
+                        </div>
+                        <div class="itemcontainer__color-block">
+                            <div class="itemcontainer__mtitle">
+                                COLOUR: <span id="color-hover"></span>
+                            </div>
+                            <div class="itemcontainer__colors">
+                                <a href="#" data-colot-title="red" class="itemcontainer__color selected" style="background-color: red;"></a>
+                                <a href="#" data-colot-title="blue" class="itemcontainer__color" style="background-color: blue;"></a>
+                            </div>
+                        </div>
+                        <div class="itemcontainer__sizes-block">
+                            <div class="itemcontainer__mtitle">
+                                SIZE
+                            </div>
+                            <div class="itemcontainer__sizes">
+                                <label class="itemcontainer__size">
+                                    <input type="radio" name="size" value="size1" checked>
+                                    <span>XS</span>
+                                </label>
+                                <label class="itemcontainer__size">
+                                    <input type="radio" name="size" value="size2">
+                                    <span>S</span>
+                                </label>
+                                <label class="itemcontainer__size">
+                                    <input type="radio" name="size" value="size3">
+                                    <span>M</span>
+                                </label>
+                                <label class="itemcontainer__size">
+                                    <input type="radio" name="size" value="size4">
+                                    <span>L</span>
+                                </label>
+                                <label class="itemcontainer__size">
+                                    <input type="radio" name="size" value="size5">
+                                    <span>XL</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="itemcontainer__buttons">
+                            <div class="button">ADD TO CART</div>
+                            <div class="itemcontainer__favorite">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455;" xml:space="preserve">
+                                    <path d="M326.632,10.346c-38.733,0-74.991,17.537-99.132,46.92c-24.141-29.384-60.398-46.92-99.132-46.92
 
+        							C57.586,10.346,0,67.931,0,138.714c0,55.426,33.05,119.535,98.23,190.546c50.161,54.647,104.728,96.959,120.257,108.626l9.01,6.769
+
+        							l9.01-6.768c15.529-11.667,70.098-53.978,120.26-108.625C421.949,258.251,455,194.141,455,138.714
+
+        							C455,67.931,397.414,10.346,326.632,10.346z M334.666,308.974c-41.259,44.948-85.648,81.283-107.169,98.029
+
+        							c-21.52-16.746-65.907-53.082-107.166-98.03C61.236,244.592,30,185.717,30,138.714c0-54.24,44.128-98.368,98.368-98.368
+
+        							c35.694,0,68.652,19.454,86.013,50.771l13.119,23.666l13.119-23.666c17.36-31.316,50.318-50.771,86.013-50.771
+
+        							c54.24,0,98.368,44.127,98.368,98.368C425,185.719,393.763,244.594,334.666,308.974z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="itemcontainer__toggls">
+                            <div class="itemcontainer__toggle">
+                                <div class="itemcontainer__togglehead">
+                                    <div class="itemcontainer__toggletitle">
+                                        Materials + Care
+                                    </div>
+                                    <div class="itemcontainer__togglearrow"></div>
+                                </div>
+                                <div class="itemcontainer__togglebody">
+                                    From the COA collection, The Neve Skirt in Brown by Nakedvice is a mini skirt crafted from custom N printed mesh.
+                                </div>
+                            </div>
+                            <div class="itemcontainer__toggle">
+                                <div class="itemcontainer__togglehead">
+                                    <div class="itemcontainer__toggletitle">
+                                        Materials + Care
+                                    </div>
+                                    <div class="itemcontainer__togglearrow"></div>
+                                </div>
+                                <div class="itemcontainer__togglebody">
+                                    From the COA collection, The Neve Skirt in Brown by Nakedvice is a mini skirt crafted from custom N printed mesh.
+                                </div>
+                            </div>
+                            <div class="itemcontainer__toggle">
+                                <div class="itemcontainer__togglehead">
+                                    <div class="itemcontainer__toggletitle">
+                                        Materials + Care
+                                    </div>
+                                    <div class="itemcontainer__togglearrow"></div>
+                                </div>
+                                <div class="itemcontainer__togglebody">
+                                    From the COA collection, The Neve Skirt in Brown by Nakedvice is a mini skirt crafted from custom N printed mesh.
+                                </div>
+                            </div>
+                            <div class="itemcontainer__toggle">
+                                <div class="itemcontainer__togglehead">
+                                    <div class="itemcontainer__toggletitle">
+                                        Materials + Care
+                                    </div>
+                                    <div class="itemcontainer__togglearrow"></div>
+                                </div>
+                                <div class="itemcontainer__togglebody">
+                                    From the COA collection, The Neve Skirt in Brown by Nakedvice is a mini skirt crafted from custom N printed mesh.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="search">
             <button>

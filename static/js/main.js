@@ -1,5 +1,69 @@
 "use strict";
 
+var langElement = document.querySelectorAll('.header__lang');
+langElement.forEach(function (item) {
+  item.addEventListener('click', function () {
+    if (item.classList.contains('active')) {
+      item.classList.remove('active');
+      slideUp(item.querySelector('.header__lang-more'));
+    } else {
+      item.classList.add('active');
+      slideDown(item.querySelector('.header__lang-more'), '5px');
+    }
+  });
+});
+"use strict";
+
+var colorTitleElement = document.getElementById('color-hover');
+var selectedColorElement = document.querySelector('.itemcontainer__color.selected');
+var allColorElement = document.querySelectorAll('.itemcontainer__color');
+var togglersElements = document.querySelectorAll('.itemcontainer__togglehead');
+
+if (colorTitleElement) {
+  colorTitleElement.innerText = selectedColorElement.dataset.colotTitle;
+}
+
+allColorElement.forEach(function (item) {
+  item.addEventListener('mouseenter', function () {
+    colorTitleElement.innerText = item.dataset.colotTitle;
+  });
+  item.addEventListener('mouseleave', function () {
+    colorTitleElement.innerText = selectedColorElement.dataset.colotTitle;
+  });
+});
+togglersElements.forEach(function (item) {
+  item.addEventListener('click', function () {
+    console.log(item.nextElementSibling);
+
+    if (item.classList.contains('active')) {
+      item.classList.remove('active');
+      slideUp(item.nextElementSibling);
+    } else {
+      item.classList.add('active');
+      slideDown(item.nextElementSibling, '0px', '15px');
+    }
+  });
+});
+var swiper = new Swiper(".mySwiper", {
+  loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3,
+  watchSlidesProgress: true,
+  direction: "vertical"
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  loop: true,
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  },
+  thumbs: {
+    swiper: swiper
+  }
+});
+"use strict";
+
 var filterBtnEl = document.querySelector('.open-filter-el');
 var sortBtnEl = document.querySelector('.open-sort-el');
 var filterEl = document.querySelector('.filter-el');

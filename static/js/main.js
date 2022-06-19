@@ -112,19 +112,19 @@ favBtns.forEach(function (item) {
   });
 });
 
-var slideDown = function slideDown(elem) {
+function slideDown(elem) {
   var pb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '0px';
   var pt = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '0px';
   elem.style.height = "".concat(elem.scrollHeight, "px");
   elem.style.paddingBottom = pb;
   elem.style.paddingTop = pt;
-};
+}
 
-var slideUp = function slideUp(elem) {
+function slideUp(elem) {
   elem.style.height = '0px';
   elem.style.paddingBottom = '0px';
   elem.style.paddingTop = '0px';
-};
+}
 
 if (filterBtnEl) {
   filterBtnEl.addEventListener('click', function () {
@@ -151,6 +151,66 @@ if (sortBtnEl) {
       slideDown(sortEl, '30px');
       sortBtnEl.classList.add('active');
     }
+  });
+}
+"use strict";
+
+function createMobileMenu() {
+  var _document$querySelect, _document$querySelect2;
+
+  var icons = [];
+  icons.push(document.querySelector('.header__fav').cloneNode(true));
+  icons.push(document.querySelector('.header__cart').cloneNode(true));
+  var loginButton = document.querySelector('.header__login').cloneNode(true);
+  var dropdowns = [];
+  document.querySelectorAll('.header__dropdown:not(.header__dropdown-close)').forEach(function (item) {
+    dropdowns.push(item.cloneNode(true));
+  });
+  var mobileMenuButton = "\n    <div class=\"mobile-menu-button\">\n        <span></span>\n        <span></span>\n        <span></span>\n    </div>\n    ";
+  document.querySelectorAll('.header__block:last-child')[0].insertAdjacentHTML('beforebegin', mobileMenuButton);
+  var mobileMenuHtml = "\n    <div class=\"mobile-menu\">\n        <div class=\"mobile-menu-close\">\n            <svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n                <g id=\"close\">\n                <path id=\"Path 2\" d=\"M29.4282 29.4281L10.572 10.5719\" stroke=\"#333333\" stroke-linecap=\"round\"></path>\n                <path id=\"Path 2_2\" d=\"M29.428 10.5719L10.5718 29.4281\" stroke=\"#333333\" stroke-linecap=\"round\"></path>\n                </g>\n            </svg>\n        </div>\n        <div class=\"mobile-menu-header\"></div>\n        <div class=\"mobile-menu-body\"></div>\n    </div>\n    <div class=\"mobile-menu-overlay\"></div>\n    ";
+  document.body.insertAdjacentHTML('beforeend', mobileMenuHtml);
+
+  (_document$querySelect = document.querySelector('.mobile-menu-header')).append.apply(_document$querySelect, icons.concat([loginButton]));
+
+  (_document$querySelect2 = document.querySelector('.mobile-menu-body')).append.apply(_document$querySelect2, dropdowns);
+
+  document.querySelectorAll('.mobile-menu-body .header__dropdown-container').forEach(function (item) {
+    slideUp(item);
+  });
+  document.querySelectorAll('.mobile-menu-body .header__dropdown-link').forEach(function (item) {
+    item.addEventListener('click', function () {
+      if (item.classList.contains('active')) {
+        item.classList.remove('active');
+        slideUp(item.nextElementSibling);
+      } else {
+        item.classList.add('active');
+        slideDown(item.nextElementSibling);
+      }
+    });
+  });
+  document.querySelector('.mobile-menu-close').addEventListener('click', function () {
+    document.querySelector('.mobile-menu').classList.remove('active');
+    document.body.classList.remove('noscroll');
+  });
+  document.querySelector('.mobile-menu-overlay').addEventListener('click', function () {
+    document.querySelector('.mobile-menu').classList.remove('active');
+    document.body.classList.remove('noscroll');
+  });
+  document.querySelector('.mobile-menu-button').addEventListener('click', function () {
+    document.querySelector('.mobile-menu').classList.add('active');
+    document.body.classList.add('noscroll');
+  });
+}
+
+createMobileMenu();
+var basketItems = document.querySelector('.note__items');
+var titlesBasket = document.querySelector('.note__titles');
+
+if (basketItems) {
+  basketItems.addEventListener('scroll', function (e) {
+    if (!titlesBasket) return;
+    titlesBasket.scrollLeft = e.target.scrollLeft;
   });
 }
 "use strict";
@@ -202,10 +262,12 @@ function hideSearchEl() {
 
 function visibleCartEl() {
   cartEl.classList.add('active');
+  document.body.classList.add('noscroll');
 }
 
 function hideCartEl() {
   cartEl.classList.remove('active');
+  document.body.classList.remove('noscroll');
 }
 
 cartBtn.addEventListener('click', visibleCartEl);
